@@ -8,7 +8,7 @@ import (
 
 func main() {
 	fmt.Println("Validating platform capabitities...")
-	if platform.IsOSSupported() {
-		fmt.Println("Go compiler is present")
+	if platform.IsOSSupported("macOS") {
+		fmt.Println("OS is supported")
 	}
 }
