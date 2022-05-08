@@ -1,8 +1,14 @@
 package platform
 
-func IsOSSupported(osName string) bool {
-	if osName == "macOS" {
-		return true
+import "errors"
+
+func IsOSSupported(osName string) (bool, error) {
+	if osName == "" {
+		return false, errors.New("osName can't be empty or null")
 	}
-	return false
+
+	if osName == "macOS" {
+		return true, nil
+	}
+	return false, nil
 }
